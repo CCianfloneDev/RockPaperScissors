@@ -22,7 +22,6 @@ document.getElementById("btnScissors").addEventListener("click", () => {
   getWinner();
 });
 
-
 /* Functions */
 // Compares strings to get winner.
 function getWinner()
@@ -33,7 +32,7 @@ function getWinner()
   }
   if (userChoice === 'rock') {
     if (computerChoice === 'paper'){
-      window.alert("You won!");
+      window.alert("The computer won :(");
     } else {
       window.alert("You won!");
     } 
