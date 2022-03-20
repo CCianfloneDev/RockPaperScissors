@@ -28,23 +28,22 @@ function getWinner()
 {
   if (userChoice === computerChoice) {
     window.alert("The game is a tie!");
-    return;
   }
-  if (userChoice === 'rock') {
+  else if (userChoice === 'rock') {
     if (computerChoice === 'paper'){
       window.alert("The computer won :(");
     } else {
       window.alert("You won!");
     } 
   }
-  if (userChoice === 'paper') {
+  else if (userChoice === 'paper') {
     if (computerChoice === 'scissors') {
       window.alert("The computer won :(");
     } else {
       window.alert("You won!");
     }
   }
-  if (userChoice === 'scissors') {
+  else if (userChoice === 'scissors') {
     if (computerChoice === 'rock') {
       window.alert("The computer won!");
     } else {
