@@ -1,82 +1,38 @@
-// global variables used in logic below.
-var userChoice = "";
-var computerChoice = "";
+document.getElementById("start").addEventListener("click", startGame);
 
-// Subscribing to startGame
-document.getElementById("start").addEventListener("click",startGame);
-
-// Subscribing all buttons to getWinner function. I do this to be able to compare which button was clicked.
-document.getElementById("btnRock").addEventListener("click", () => {
-  userChoice = 'rock';
-  computerChoice = getComputerChoice();
-  getWinner();
-});
-document.getElementById("btnPaper").addEventListener("click", () => {
-  userChoice = 'paper';
-  computerChoice = getComputerChoice();
-  getWinner();
-});
-document.getElementById("btnScissors").addEventListener("click", () => {
-  userChoice = 'scissors';
-  computerChoice = getComputerChoice();
-  getWinner();
+["btnPaper", "btnRock", "btnScissors"].forEach((button) => {
+    document.getElementById(button).addEventListener("click", () => {
+        let userChoice = button.substring("btn".length).toLowerCase();
+        let computerChoice = getComputerChoice();
+        getWinner(computerChoice, userChoice);
+    });
 });
 
-/* Functions */
-// Compares strings to get winner.
-function getWinner()
-{
-  if (userChoice === computerChoice) {
-    window.alert("The game is a tie!");
-  }
-  else if (userChoice === 'rock') {
-    if (computerChoice === 'paper'){
-      window.alert("The computer won :(");
-    } else {
-      window.alert("You won!");
-    } 
-  }
-  else if (userChoice === 'paper') {
-    if (computerChoice === 'scissors') {
-      window.alert("The computer won :(");
-    } else {
-      window.alert("You won!");
+function getWinner(playerOne, playerTwo) {
+    if (playerOne == playerTwo) return window.alert("The game is a tie!");
+    switch (playerOne) {
+        case "rock":
+            if (playerTwo == "paper") return window.alert("The computer won :(");
+            break;
+        case "paper":
+            if (playerTwo == "scissors") return window.alert("The computer won :(");
+            break;
+        case "scissors":
+            if (playerTwo == "rock") return window.alert("The computer won :(");
+            break;
+        default:
+            window.alert("You won!");
+            break;
     }
-  }
-  else if (userChoice === 'scissors') {
-    if (computerChoice === 'rock') {
-      window.alert("The computer won!");
-    } else {
-      window.alert("You won!");
-    }
-  }
 }
 
-// Returns string to compare in getWinner function.
-function getComputerChoice()
-{
-  let randomNumber = Math.floor(Math.random() * 3) + 1
-
-  switch (randomNumber) 
-  {
-    case 1:
-      return 'rock';
-    case 2:
-      return 'paper';
-    case 3:
-      return 'scissors';
-  }
+function getComputerChoice() {
+    return ["rock", "paper", "scissors"] [Math.floor(Math.random() * 3)]
 }
 
-// Hides start button and shows game buttons when clicked.
-function startGame()
-{
-  var buttonsToShow = document.getElementsByClassName("gameButtons");
-
-  for(i = 0; i < buttonsToShow.length; i++)
-  {
-      buttonsToShow[i].style.display = "block";
-  }
-
-  document.getElementById("start").style.display = "none";
+function startGame() {
+    Array.from(document.getElementsByClassName("gameButtons")).forEach((button) => {
+        button.style.display = "block";
+    })
+    document.getElementById("start").style.display = "none";
 }
