@@ -5,7 +5,7 @@ body
 }
 
 /* placing the center box that holds the buttons */ 
-#gameStartBox
+#gameStartBox, #choiceOutputBox
 {
 	position: absolute;
 	top: 0;
@@ -13,6 +13,8 @@ body
     left: 0;
     right: 0;
     margin: auto;
+	width: 510px;
+	height: 270px;
 
 	display: flex;
 	align-items: center;
@@ -67,5 +69,33 @@ body
 
 .gameButtons
 {
+	/* set to block when start button is pressed */
 	display: none;
+}
+
+#choiceOutputBox
+{
+	/* Color is temporary for positioning */
+	background-color: lightblue;
+	opacity: 50%;
+}
+
+#userChoiceBox, #computerChoiceBox
+{
+	/* Color is temporary for positioning */
+	width: 180px;
+	height: 270px;
+	position: relative;
+	background-color: red;
+	opacity: 40%;
+}
+
+#userChoiceBox
+{
+	margin-right: 85px;
+}
+
+#computerChoiceBox
+{
+	margin-left: 85px;
 }
