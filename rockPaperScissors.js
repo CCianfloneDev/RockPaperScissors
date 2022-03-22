@@ -4,7 +4,7 @@ document.getElementById("start").addEventListener("click", startGame);
     document.getElementById(button).addEventListener("click", () => {
         let userChoice = button.substring("btn".length).toLowerCase();
         let computerChoice = getComputerChoice();
-        getWinner(computerChoice, userChoice);
+        getWinner(userChoice, computerChoice);
     });
 });
 
@@ -20,19 +20,16 @@ function getWinner(playerOne, playerTwo) {
         case "scissors":
             if (playerTwo == "rock") return window.alert("The computer won :(");
             break;
-        default:
-            window.alert("You won!");
-            break;
-    }
+    } window.alert("You won!");
 }
 
 function getComputerChoice() {
-    return ["rock", "paper", "scissors"] [Math.floor(Math.random() * 3)]
+	return ["rock", "paper", "scissors"] [Math.floor(Math.random() * 3)]
 }
 
 function startGame() {
-    Array.from(document.getElementsByClassName("gameButtons")).forEach((button) => {
-        button.style.display = "block";
-    })
+	Array.from(document.getElementsByClassName("gameButtons")).forEach((button) => {
+		button.style.display = "block";
+	})
     document.getElementById("start").style.display = "none";
 }
