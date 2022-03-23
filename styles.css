@@ -8,7 +8,7 @@ body
 #gameStartBox
 {
 	position: absolute;
-	top: 0;
+	top: 20vh;
     left: 0;
     right: 0;
     margin: auto;
