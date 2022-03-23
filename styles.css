@@ -23,11 +23,11 @@ body {
 	width: 300px;
 	height: 100px;
 
-	top: 0;
+	top: 60vh;
 	bottom: 0;
 	left: 0;
 	right: 0;
-	margin: auto;
+	margin: 0 auto;
 }
 
 #choicesBox li {
