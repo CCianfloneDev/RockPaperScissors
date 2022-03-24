@@ -1,20 +1,15 @@
-body
-{
+body {
 	background-color: lightgrey;
 	font-family: 'Fredoka', sans-serif;
 }
 
-/* placing the center box that holds the buttons */ 
-#gameStartBox, #choiceOutputBox
-{
+/* placing the center box that holds the buttons */
+#gameStartBox {
 	position: absolute;
-	top: 0;
-    bottom: 500px;
-    left: 0;
-    right: 0;
-    margin: auto;
-	width: 510px;
-	height: 270px;
+	top: 20vh;
+	left: 0;
+	right: 0;
+	margin: auto;
 
 	display: flex;
 	align-items: center;
@@ -22,42 +17,40 @@ body
 }
 
 /* Container for buttons */
-#choicesBox
-{	
+#choicesBox {
 	border: 3px solid green;
 	position: absolute;
-    width: 300px;
-    height: 100px;
+	width: 300px;
+	height: 100px;
 
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
+	top: 60vh;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
 }
-#choicesBox li
-{	
+
+#choicesBox li {
 	padding-left: 7px;
 	top: 40px;
 	position: relative;
 	display: inline-block;
 }
-#choicesBox ol
-{
+
+#choicesBox ol {
 	display: inline-block;
 	position: relative;
 	width: 300px;
-    margin: auto;
+	margin: auto;
 }
 
 /* This button will hide after clicking */
-#start
-{
+#start {
 	font-family: 'Fredoka', sans-serif;
 	font-size: 2em;
 
 	position: fixed;
-	top: 0px;
+	top: 293px;
 	bottom: 0px;
 	right: 0px;
 	left: 0px;
@@ -67,35 +60,6 @@ body
 	height: 100px;
 }
 
-.gameButtons
-{
-	/* set to block when start button is pressed */
+.gameButtons {
 	display: none;
-}
-
-#choiceOutputBox
-{
-	/* Color is temporary for positioning */
-	background-color: lightblue;
-	opacity: 50%;
-}
-
-#userChoiceBox, #computerChoiceBox
-{
-	/* Color is temporary for positioning */
-	width: 180px;
-	height: 270px;
-	position: relative;
-	background-color: red;
-	opacity: 40%;
-}
-
-#userChoiceBox
-{
-	margin-right: 85px;
-}
-
-#computerChoiceBox
-{
-	margin-left: 85px;
 }
