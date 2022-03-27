@@ -4,12 +4,16 @@ body {
 }
 
 /* placing the center box that holds the buttons */
-#gameStartBox {
+#gameStartBox, #choiceOutputBox
+{
 	position: absolute;
-	top: 20vh;
-	left: 0;
-	right: 0;
-	margin: auto;
+	top: 70px;
+    bottom: 500px;
+    left: 0;
+    right: 0;
+    margin: auto;
+	width: 510px;
+	height: 270px;
 
 	display: flex;
 	align-items: center;
@@ -22,7 +26,6 @@ body {
 	position: absolute;
 	width: 300px;
 	height: 100px;
-
 	top: 60vh;
 	bottom: 0;
 	left: 0;
@@ -30,36 +33,65 @@ body {
 	margin: 0 auto;
 }
 
-#choicesBox li {
-	padding-left: 7px;
-	top: 40px;
+#start
+{
 	position: relative;
-	display: inline-block;
-}
-
-#choicesBox ol {
-	display: inline-block;
-	position: relative;
+	height: 100px;
 	width: 300px;
-	margin: auto;
-}
 
-/* This button will hide after clicking */
-#start {
 	font-family: 'Fredoka', sans-serif;
 	font-size: 2em;
 
-	position: fixed;
-	top: 293px;
-	bottom: 0px;
-	right: 0px;
-	left: 0px;
-	margin: auto;
+	top: -40px;
+	bottom: 0;
+	left: -47px;
+	right: 0;
+	margin: 0 auto;
+}
 
+#choicesBox li, #choicesBox ol
+{
+	position: relative;
+	display: inline-block;
+}
+
+#choicesBox li {
+	padding-left: 7px;
+	top: 40px;
+}
+
+#choicesBox ol {
 	width: 300px;
-	height: 100px;
+	margin: auto;
 }
 
 .gameButtons {
 	display: none;
+}
+
+#choiceOutputBox
+{
+	/* Color is temporary for positioning */
+	background-color: lightblue;
+	opacity: 50%;
+}
+
+#userChoiceBox, #computerChoiceBox
+{
+	/* Color is temporary for positioning */
+	width: 180px;
+	height: 270px;
+	position: relative;
+	background-color: red;
+	opacity: 40%;
+}
+
+#userChoiceBox
+{
+	margin-right: 85px;
+}
+
+#computerChoiceBox
+{
+	margin-left: 85px;
 }
