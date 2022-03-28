@@ -4,16 +4,19 @@ body {
 }
 
 /* placing the center box that holds the buttons */
-#gameStartBox {
-	position: absolute;
-	top: 20vh;
-	left: 0;
-	right: 0;
-	margin: auto;
-
-	display: flex;
-	align-items: center;
-	justify-content: center;
+#gameStartBox, #choiceOutputBox
+{
+    position: absolute;
+    top: 70px;
+    bottom: 500px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 510px;
+    height: 270px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Container for buttons */
@@ -63,4 +66,31 @@ body {
 
 .gameButtons {
 	display: none;
+}
+
+#choiceOutputBox
+{
+	/* Color is temporary for positioning */
+	background-color: lightblue;
+	opacity: 50%;
+}
+
+#userChoiceBox, #computerChoiceBox
+{
+	/* Color is temporary for positioning */
+	width: 180px;
+	height: 270px;
+	position: relative;
+	background-color: red;
+	opacity: 40%;
+}
+
+#userChoiceBox
+{
+	margin-right: 85px;
+}
+
+#computerChoiceBox
+{
+	margin-left: 85px;
 }
