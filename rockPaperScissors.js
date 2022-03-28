@@ -9,9 +9,13 @@ document.getElementById("start").addEventListener("click", startGame);
 });
 
 function getWinner(playerOne, playerTwo) {
+    // setting placeholder images for computer and user choice.
+    let userChoiceImage = document.getElementById("userChoiceImage");
+    userChoiceImage.setAttribute('src', 'images/placeHolder.png')
 
+    let computerChoiceImage = document.getElementById("computerChoiceImage");
+    computerChoiceImage.setAttribute('src', 'images/placeHolder.png');
 
-    if (playerOne == playerTwo) return window.alert("The game is a tie!");
     switch (playerOne) {
         case "rock":
             if (playerTwo == "paper")
@@ -22,9 +26,9 @@ function getWinner(playerOne, playerTwo) {
                 let computerChoiceImage = document.getElementById("computerChoiceImage");
                 computerChoiceImage.setAttribute('src', 'images/Rock.png');
 
-                return window.alert("The computer won :(");
+                window.alert("You won!");
             } 
-            break;
+            return;
         case "paper":
             if (playerTwo == "scissors") 
             {
@@ -34,9 +38,9 @@ function getWinner(playerOne, playerTwo) {
                 let computerChoiceImage = document.getElementById("computerChoiceImage");
                 computerChoiceImage.setAttribute('src', 'images/Paper.png');
 
-                return window.alert("The computer won :(");
+                window.alert("You won!");
             }
-            break;
+            return;
         case "scissors":
             if (playerTwo == "rock") 
             {
@@ -46,12 +50,9 @@ function getWinner(playerOne, playerTwo) {
                 let computerChoiceImage = document.getElementById("computerChoiceImage");
                 computerChoiceImage.setAttribute('src', 'images/Scissors.png');
 
-                return window.alert("The computer won :(");
+                window.alert("The computer won :(");
             }
-            break;
-        default:
-            window.alert("You won!");
-            break;
+            return;
     }
 }
 
@@ -64,9 +65,16 @@ function startGame() {
         button.style.display = "block";
     })
 
-    // When start button is clicked  the initial image goes away.
+    // When start button is clicked the initial image goes away.
     let startingImage = document.getElementById("initialImage");
     startingImage.setAttribute('src', '');
+
+    // setting placeholder images for computer and user choice.
+    let userChoiceImage = document.getElementById("userChoiceImage");
+    userChoiceImage.setAttribute('src', 'images/placeHolder.png')
+
+    let computerChoiceImage = document.getElementById("computerChoiceImage");
+    computerChoiceImage.setAttribute('src', 'images/placeHolder.png');
 
     document.getElementById("start").style.display = "none";
 }
