@@ -36,6 +36,12 @@ function getWinner(playerOne, playerTwo) {
             break;
         }
         window.alert("The game is a tie!");
+        if (confirm('Would you like to play again?')) {
+            return;
+        }
+        else {
+            load();
+        }
     }
 
     switch (playerOne) {
@@ -49,7 +55,12 @@ function getWinner(playerOne, playerTwo) {
                 computerChoiceImage.setAttribute('src', 'images/Rock.png');
 
                 window.alert("You won!");
-                load();
+                if (confirm('Would you like to play again?')) {
+                    return;
+                }
+                else {
+                    load();
+                }
             } 
             break;
         case "paper":
@@ -62,7 +73,12 @@ function getWinner(playerOne, playerTwo) {
                 computerChoiceImage.setAttribute('src', 'images/Paper.png');
 
                 window.alert("You won!");
-                load();
+                if (confirm('Would you like to play again?')) {
+                    return;
+                }
+                else {
+                    load();
+                }
             }
             break;
         case "scissors":
@@ -75,7 +91,12 @@ function getWinner(playerOne, playerTwo) {
                 computerChoiceImage.setAttribute('src', 'images/Scissors.png');
 
                 window.alert("The computer won :(");
-                load();
+                if (confirm('Would you like to play again?')) {
+                    return;
+                }
+                else {
+                    load();
+                }
             }
             break;
     }
