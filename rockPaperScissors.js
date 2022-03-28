@@ -1,4 +1,4 @@
-document.getElementById("start").addEventListener("click", startGame);
+load();
 
 ["btnPaper", "btnRock", "btnScissors"].forEach((button) => {
     document.getElementById(button).addEventListener("click", () => {
@@ -49,6 +49,7 @@ function getWinner(playerOne, playerTwo) {
                 computerChoiceImage.setAttribute('src', 'images/Rock.png');
 
                 window.alert("You won!");
+                load();
             } 
             break;
         case "paper":
@@ -61,6 +62,7 @@ function getWinner(playerOne, playerTwo) {
                 computerChoiceImage.setAttribute('src', 'images/Paper.png');
 
                 window.alert("You won!");
+                load();
             }
             break;
         case "scissors":
@@ -73,6 +75,7 @@ function getWinner(playerOne, playerTwo) {
                 computerChoiceImage.setAttribute('src', 'images/Scissors.png');
 
                 window.alert("The computer won :(");
+                load();
             }
             break;
     }
@@ -99,4 +102,23 @@ function startGame() {
     computerImage.setAttribute('src', 'images/placeHolder.png');
 
     document.getElementById("start").style.display = "none";
+}
+
+function load(){
+    document.getElementById("start").addEventListener("click", startGame);
+
+    let startingImage = document.getElementById("initialImage");
+    startingImage.setAttribute('src', 'images/GamePhoto.png');
+
+    document.getElementById("start").style.display = "block";
+
+    Array.from(document.getElementsByClassName("gameButtons")).forEach((button) => {
+        button.style.display = "none";
+    })
+
+    let userChoiceImage = document.getElementById("userChoiceImage");
+    userChoiceImage.setAttribute('src', '');
+
+    let computerChoiceImage = document.getElementById("computerChoiceImage");
+    computerChoiceImage.setAttribute('src', '');
 }
