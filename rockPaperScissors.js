@@ -16,6 +16,28 @@ function getWinner(playerOne, playerTwo) {
     let computerChoiceImage = document.getElementById("computerChoiceImage");
     computerChoiceImage.setAttribute('src', 'images/placeHolder.png');
 
+    if (playerOne == playerTwo) 
+    {
+        switch (playerOne)
+        {
+            case "rock":
+                userChoiceImage.setAttribute('src', 'images/Rock.png');
+                computerChoiceImage.setAttribute('src', 'images/Rock.png');
+            break;
+
+            case "paper":
+                userChoiceImage.setAttribute('src', 'images/Paper.png');
+                computerChoiceImage.setAttribute('src', 'images/Paper.png');
+            break;
+
+            case "scissors":
+                userChoiceImage.setAttribute('src', 'images/Scissors.png');
+                computerChoiceImage.setAttribute('src', 'images/Scissors.png');
+            break;
+        }
+        window.alert("The game is a tie!");
+    }
+
     switch (playerOne) {
         case "rock":
             if (playerTwo == "paper")
@@ -28,7 +50,7 @@ function getWinner(playerOne, playerTwo) {
 
                 window.alert("You won!");
             } 
-            return;
+            break;
         case "paper":
             if (playerTwo == "scissors") 
             {
@@ -40,7 +62,7 @@ function getWinner(playerOne, playerTwo) {
 
                 window.alert("You won!");
             }
-            return;
+            break;
         case "scissors":
             if (playerTwo == "rock") 
             {
@@ -52,7 +74,7 @@ function getWinner(playerOne, playerTwo) {
 
                 window.alert("The computer won :(");
             }
-            return;
+            break;
     }
 }
 
@@ -70,11 +92,11 @@ function startGame() {
     startingImage.setAttribute('src', '');
 
     // setting placeholder images for computer and user choice.
-    let userChoiceImage = document.getElementById("userChoiceImage");
-    userChoiceImage.setAttribute('src', 'images/placeHolder.png')
+    let userImage = document.getElementById("userChoiceImage");
+    userImage.setAttribute('src', 'images/placeHolder.png')
 
-    let computerChoiceImage = document.getElementById("computerChoiceImage");
-    computerChoiceImage.setAttribute('src', 'images/placeHolder.png');
+    let computerImage = document.getElementById("computerChoiceImage");
+    computerImage.setAttribute('src', 'images/placeHolder.png');
 
     document.getElementById("start").style.display = "none";
 }
