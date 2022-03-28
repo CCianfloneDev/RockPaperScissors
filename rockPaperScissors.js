@@ -45,14 +45,45 @@ function getWinner(playerOne, playerTwo) {
     }
 
     switch (playerOne) {
+
+        // Computer chose rock.
         case "rock":
+            document.getElementById("computerChoiceImage").src = "images/Rock.png";
+
             if (playerTwo == "paper")
             {
-                let userChoiceImage = document.getElementById("userChoiceImage");
-                userChoiceImage.setAttribute('src', 'images/Paper.png')
+                document.getElementById("userChoiceImage").src = "images/Paper.png";
 
-                let computerChoiceImage = document.getElementById("computerChoiceImage");
-                computerChoiceImage.setAttribute('src', 'images/Rock.png');
+                window.alert("You won!");
+                if (confirm('Would you like to play again?')) {
+                    return;
+                }
+                else {
+                    load();
+                }
+            }
+            else
+            {
+                document.getElementById("userChoiceImage").src = "images/Scissors.png";
+
+                window.alert("You lost!");
+                if (confirm('Would you like to play again?')) {
+                    return;
+                }
+                else {
+                    load();
+                }
+            }
+            
+            break;
+
+        // Computer chose paper.
+        case "paper":
+            document.getElementById("computerChoiceImage").src = "images/Paper.png";
+
+            if (playerTwo == "scissors") 
+            {
+                document.getElementById("userChoiceImage").src = "images/Scissors.png";
 
                 window.alert("You won!");
                 if (confirm('Would you like to play again?')) {
@@ -62,15 +93,28 @@ function getWinner(playerOne, playerTwo) {
                     load();
                 }
             } 
-            break;
-        case "paper":
-            if (playerTwo == "scissors") 
+            else
             {
-                let userChoiceImage = document.getElementById("userChoiceImage");
-                userChoiceImage.setAttribute('src', 'images/Scissors.png')
+                document.getElementById("userChoiceImage").src = "images/Rock.png";
+                
+                window.alert("You lost!");
+                if (confirm('Would you like to play again?')) {
+                    return;
+                }
+                else {
+                    load();
+                }
+            }
 
-                let computerChoiceImage = document.getElementById("computerChoiceImage");
-                computerChoiceImage.setAttribute('src', 'images/Paper.png');
+            break;
+
+        // Computer chose scissors.
+        case "scissors":
+            document.getElementById("computerChoiceImage").src = "images/Scissors.png";
+
+            if (playerTwo == "rock") 
+            {
+                document.getElementById("userChoiceImage").src = "images/Rock.png";
 
                 window.alert("You won!");
                 if (confirm('Would you like to play again?')) {
@@ -80,17 +124,11 @@ function getWinner(playerOne, playerTwo) {
                     load();
                 }
             }
-            break;
-        case "scissors":
-            if (playerTwo == "rock") 
+            else
             {
-                let userChoiceImage = document.getElementById("userChoiceImage");
-                userChoiceImage.setAttribute('src', 'images/Rock.png')
-
-                let computerChoiceImage = document.getElementById("computerChoiceImage");
-                computerChoiceImage.setAttribute('src', 'images/Scissors.png');
-
-                window.alert("The computer won :(");
+                document.getElementById("userChoiceImage").src = "images/Paper.png";
+                
+                window.alert("You lost!");
                 if (confirm('Would you like to play again?')) {
                     return;
                 }
@@ -98,6 +136,7 @@ function getWinner(playerOne, playerTwo) {
                     load();
                 }
             }
+            
             break;
     }
 }
