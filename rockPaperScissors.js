@@ -1,5 +1,7 @@
+// Initial load.
 load();
 
+// Event listeners for game buttons.
 ["btnPaper", "btnRock", "btnScissors"].forEach((button) => {
     document.getElementById(button).addEventListener("click", () => {
         let userChoice = button.substring("btn".length).toLowerCase();
@@ -8,6 +10,11 @@ load();
     });
 });
 
+
+/* Get winner function
+ * Param: playerOne, playerTwo
+ * Returns winner.
+ */
 function getWinner(playerOne, playerTwo) {
     // setting placeholder images for computer and user choice.
     let userChoiceImage = document.getElementById("userChoiceImage");
@@ -16,6 +23,7 @@ function getWinner(playerOne, playerTwo) {
     let computerChoiceImage = document.getElementById("computerChoiceImage");
     computerChoiceImage.setAttribute('src', 'images/placeHolder.png');
 
+    // If computer choice is same as user choice, determine what computer choice was.
     if (playerOne == playerTwo) 
     {
         switch (playerOne)
@@ -44,6 +52,7 @@ function getWinner(playerOne, playerTwo) {
         }
     }
 
+    // Checks what option was returned from GetComputerChoice()
     switch (playerOne) {
 
         // Computer chose rock.
@@ -136,49 +145,55 @@ function getWinner(playerOne, playerTwo) {
                     load();
                 }
             }
-            
+
             break;
     }
 }
 
+/* Get computer choice function.
+ *
+ * Returns one of three possible choices for computer player.
+ */
 function getComputerChoice() {
     return ["rock", "paper", "scissors"] [Math.floor(Math.random() * 3)]
 }
 
+/* Start game function.
+ * 
+ * Occurs on start-button click.
+ */
 function startGame() {
+    // hide start button
+    document.getElementById("start").style.display = "none";
+
+    // display game buttons
     Array.from(document.getElementsByClassName("gameButtons")).forEach((button) => {
         button.style.display = "block";
     })
 
     // When start button is clicked the initial image goes away.
-    let startingImage = document.getElementById("initialImage");
-    startingImage.setAttribute('src', '');
+    document.getElementById("initialImage").src = "";
 
     // setting placeholder images for computer and user choice.
-    let userImage = document.getElementById("userChoiceImage");
-    userImage.setAttribute('src', 'images/placeHolder.png')
-
-    let computerImage = document.getElementById("computerChoiceImage");
-    computerImage.setAttribute('src', 'images/placeHolder.png');
-
-    document.getElementById("start").style.display = "none";
+    document.getElementById("userChoiceImage").src = "images/placeHolder.png";
+    document.getElementById("computerChoiceImage").src = "images/placeHolder.png";
 }
 
+/* Load function of site.
+ *
+ * Sets inital state of site elements.
+ */
 function load(){
     document.getElementById("start").addEventListener("click", startGame);
 
-    let startingImage = document.getElementById("initialImage");
-    startingImage.setAttribute('src', 'images/GamePhoto.png');
+    // Site images.
+    document.getElementById("initialImage").src = "images/GamePhoto.png";
+    document.getElementById("userChoiceImage").src = "";
+    document.getElementById("computerChoiceImage").src = "";
 
+    // Site buttons.
     document.getElementById("start").style.display = "block";
-
     Array.from(document.getElementsByClassName("gameButtons")).forEach((button) => {
         button.style.display = "none";
     })
-
-    let userChoiceImage = document.getElementById("userChoiceImage");
-    userChoiceImage.setAttribute('src', '');
-
-    let computerChoiceImage = document.getElementById("computerChoiceImage");
-    computerChoiceImage.setAttribute('src', '');
 }
