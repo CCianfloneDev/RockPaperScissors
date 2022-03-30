@@ -1,6 +1,10 @@
 // Initial load.
 load();
 
+// global variables to keep track of score.
+let userScore = document.getElementById("userScore");
+let computerScore = document.getElementById("computerScore");
+
 // Event listeners for game buttons.
 ["btnPaper", "btnRock", "btnScissors"].forEach((button) => {
     document.getElementById(button).addEventListener("click", () => {
@@ -177,6 +181,10 @@ function startGame() {
     // setting placeholder images for computer and user choice.
     document.getElementById("userChoiceImage").src = "images/placeHolder.png";
     document.getElementById("computerChoiceImage").src = "images/placeHolder.png";
+
+    // Showing score
+    userScore.style.display = "block";
+    computerScore.style.display = "block";
 }
 
 /* Load function of site.
