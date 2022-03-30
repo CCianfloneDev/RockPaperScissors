@@ -69,7 +69,6 @@ body {
 	display: none;
 }
 
-
 #userChoiceBox, #computerChoiceBox
 {
 
@@ -86,4 +85,9 @@ body {
 #computerChoiceBox
 {
 	margin-left: 85px;
+}
+
+#userScore, #computerScore
+{
+	display: none;
 }
