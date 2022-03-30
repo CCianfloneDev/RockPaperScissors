@@ -1,19 +1,22 @@
 // Initial load.
 load();
 
-// global variables to keep track of score.
-let userScore = document.getElementById("userScore");
-let computerScore = document.getElementById("computerScore");
-
 // Event listeners for game buttons.
 ["btnPaper", "btnRock", "btnScissors"].forEach((button) => {
     document.getElementById(button).addEventListener("click", () => {
         let userChoice = button.substring("btn".length).toLowerCase();
         let computerChoice = getComputerChoice();
         getWinner(computerChoice, userChoice);
+
+        // Updating score.
+        document.getElementById("userScore").innerHTML = `User Score: ${userScore}`;
+        document.getElementById("computerScore").innerHTML = `Computer Score: ${computerScore}`;
     });
 });
 
+// Global variables to track score.
+let userScore = 0;
+let computerScore = 0;
 
 /* Get winner function
  * Param: playerOne, playerTwo
@@ -56,6 +59,8 @@ function getWinner(playerOne, playerTwo) {
         }
     }
 
+
+
     // Checks what option was returned from GetComputerChoice()
     switch (playerOne) {
 
@@ -66,6 +71,7 @@ function getWinner(playerOne, playerTwo) {
             if (playerTwo == "paper")
             {
                 document.getElementById("userChoiceImage").src = "images/Paper.png";
+                userScore++;
 
                 window.alert("You won!");
                 if (confirm('Would you like to play again?')) {
@@ -78,6 +84,7 @@ function getWinner(playerOne, playerTwo) {
             else
             {
                 document.getElementById("userChoiceImage").src = "images/Scissors.png";
+                computerScore++;
 
                 window.alert("You lost!");
                 if (confirm('Would you like to play again?')) {
@@ -87,7 +94,7 @@ function getWinner(playerOne, playerTwo) {
                     load();
                 }
             }
-            
+
             break;
 
         // Computer chose paper.
@@ -97,6 +104,7 @@ function getWinner(playerOne, playerTwo) {
             if (playerTwo == "scissors") 
             {
                 document.getElementById("userChoiceImage").src = "images/Scissors.png";
+                userScore++;
 
                 window.alert("You won!");
                 if (confirm('Would you like to play again?')) {
@@ -109,7 +117,8 @@ function getWinner(playerOne, playerTwo) {
             else
             {
                 document.getElementById("userChoiceImage").src = "images/Rock.png";
-                
+                computerScore++;
+
                 window.alert("You lost!");
                 if (confirm('Would you like to play again?')) {
                     return;
@@ -128,6 +137,7 @@ function getWinner(playerOne, playerTwo) {
             if (playerTwo == "rock") 
             {
                 document.getElementById("userChoiceImage").src = "images/Rock.png";
+                userScore++;
 
                 window.alert("You won!");
                 if (confirm('Would you like to play again?')) {
@@ -140,7 +150,8 @@ function getWinner(playerOne, playerTwo) {
             else
             {
                 document.getElementById("userChoiceImage").src = "images/Paper.png";
-                
+                computerScore++;
+
                 window.alert("You lost!");
                 if (confirm('Would you like to play again?')) {
                     return;
@@ -150,7 +161,7 @@ function getWinner(playerOne, playerTwo) {
                 }
             }
 
-            break;
+            break;              
     }
 }
 
@@ -183,8 +194,11 @@ function startGame() {
     document.getElementById("computerChoiceImage").src = "images/placeHolder.png";
 
     // Showing score
-    userScore.style.display = "block";
-    computerScore.style.display = "block";
+    document.getElementById("userScore").style.display = "block";
+    document.getElementById("computerScore").style.display = "block";
+
+    document.getElementById("userScore").innerHTML = `User Score: ${userScore}`;
+    document.getElementById("computerScore").innerHTML = `Computer Score: ${computerScore}`;
 }
 
 /* Load function of site.
