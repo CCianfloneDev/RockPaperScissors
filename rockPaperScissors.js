@@ -1,3 +1,7 @@
+// Global variables to track score.
+let userScore = 0;
+let computerScore = 0;
+
 // Initial load.
 load();
 
@@ -13,10 +17,6 @@ load();
         document.getElementById("computerScore").innerHTML = `Computer Score: ${computerScore}`;
     });
 });
-
-// Global variables to track score.
-let userScore = 0;
-let computerScore = 0;
 
 /* Get winner function
  * Param: playerOne, playerTwo
@@ -59,8 +59,6 @@ function getWinner(playerOne, playerTwo) {
         }
     }
 
-
-
     // Checks what option was returned from GetComputerChoice()
     switch (playerOne) {
 
@@ -88,7 +86,7 @@ function getWinner(playerOne, playerTwo) {
 
                 window.alert("You lost!");
                 if (confirm('Would you like to play again?')) {
-                    return;
+                    break;
                 }
                 else {
                     load();
@@ -108,7 +106,7 @@ function getWinner(playerOne, playerTwo) {
 
                 window.alert("You won!");
                 if (confirm('Would you like to play again?')) {
-                    return;
+                    break;
                 }
                 else {
                     load();
@@ -121,7 +119,7 @@ function getWinner(playerOne, playerTwo) {
 
                 window.alert("You lost!");
                 if (confirm('Would you like to play again?')) {
-                    return;
+                    break;
                 }
                 else {
                     load();
@@ -141,7 +139,7 @@ function getWinner(playerOne, playerTwo) {
 
                 window.alert("You won!");
                 if (confirm('Would you like to play again?')) {
-                    return;
+                    break;
                 }
                 else {
                     load();
@@ -154,7 +152,7 @@ function getWinner(playerOne, playerTwo) {
 
                 window.alert("You lost!");
                 if (confirm('Would you like to play again?')) {
-                    return;
+                    break;
                 }
                 else {
                     load();
@@ -212,6 +210,12 @@ function load(){
     document.getElementById("initialImage").src = "images/GamePhoto.png";
     document.getElementById("userChoiceImage").src = "";
     document.getElementById("computerChoiceImage").src = "";
+
+    // Hiding and resetting score
+    document.getElementById("userScore").style.display = "none";
+    document.getElementById("computerScore").style.display = "none";
+    userScore = 0;
+    computerScore = 0;
 
     // Site buttons.
     document.getElementById("start").style.display = "block";
