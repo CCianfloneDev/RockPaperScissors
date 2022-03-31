@@ -33,133 +33,104 @@ function getWinner(playerOne, playerTwo) {
     // If computer choice is same as user choice, determine what computer choice was.
     if (playerOne == playerTwo) 
     {
+        computerChoiceImage.style.border = "2px solid green"; 
+        userChoiceImage.style.border = "2px solid green";     
+
         switch (playerOne)
         {
             case "rock":
-                userChoiceImage.setAttribute('src', 'images/Rock.png');
-                computerChoiceImage.setAttribute('src', 'images/Rock.png');
+                userChoiceImage.src = "images/Rock.png";
+                computerChoiceImage.src = "images/Rock.png";
             break;
 
             case "paper":
-                userChoiceImage.setAttribute('src', 'images/Paper.png');
-                computerChoiceImage.setAttribute('src', 'images/Paper.png');
+                userChoiceImage.src = "images/Paper.png";
+                computerChoiceImage.src = "images/Paper.png";
             break;
 
             case "scissors":
-                userChoiceImage.setAttribute('src', 'images/Scissors.png');
-                computerChoiceImage.setAttribute('src', 'images/Scissors.png');
+                userChoiceImage.src = "images/Scissors.png";
+                computerChoiceImage.src = "images/Scissors.png";
             break;
-        }
-        window.alert("The game is a tie!");
-        if (confirm('Would you like to play again?')) {
-            return;
-        }
-        else {
-            load();
         }
     }
+    // Computer chose rock.
+    else if (playerOne == "rock")
+    {
+        computerChoiceImage.src = "images/Rock.png";
 
-    // Checks what option was returned from GetComputerChoice()
-    switch (playerOne) {
+        if (playerTwo == "paper")
+        {
+            // User won: Rock Vs Paper
+            userChoiceImage.src = "images/Paper.png";
 
-        // Computer chose rock.
-        case "rock":
-            document.getElementById("computerChoiceImage").src = "images/Rock.png";
+            computerChoiceImage.style.border = "none";   
+            userChoiceImage.style.border = "2px solid blue";
+        
+            userScore++;
+        }
+        else
+        {
+            // User lost: Rock Vs Scissors
+            userChoiceImage.src = "images/Scissors.png";
 
-            if (playerTwo == "paper")
-            {
-                document.getElementById("userChoiceImage").src = "images/Paper.png";
-                userScore++;
+            computerChoiceImage.style.border = "2px solid blue";
+            userChoiceImage.style.border = "none";
 
-                window.alert("You won!");
-                if (confirm('Would you like to play again?')) {
-                    return;
-                }
-                else {
-                    load();
-                }
-            }
-            else
-            {
-                document.getElementById("userChoiceImage").src = "images/Scissors.png";
-                computerScore++;
+            computerScore++;
+        }
+    }
+    // Computer chose paper.
+    else if (playerOne == "paper")
+    {
+        computerChoiceImage.src = "images/Paper.png";
 
-                window.alert("You lost!");
-                if (confirm('Would you like to play again?')) {
-                    break;
-                }
-                else {
-                    load();
-                }
-            }
+        if (playerTwo == "scissors") 
+        {
+            // User won: Paper Vs Scissors
+            userChoiceImage.src = "images/Scissors.png";
 
-            break;
+            userChoiceImage.style.border = "2px solid blue";  
+            computerChoiceImage.style.border = "none";
 
-        // Computer chose paper.
-        case "paper":
-            document.getElementById("computerChoiceImage").src = "images/Paper.png";
+            userScore++;
+        } 
+        else
+        {
+            // User lost: Paper Vs Rock
+            userChoiceImage.src = "images/Rock.png";
 
-            if (playerTwo == "scissors") 
-            {
-                document.getElementById("userChoiceImage").src = "images/Scissors.png";
-                userScore++;
+            computerChoiceImage.style.border = "2px solid blue";
+            userChoiceImage.style.border = "none";
 
-                window.alert("You won!");
-                if (confirm('Would you like to play again?')) {
-                    break;
-                }
-                else {
-                    load();
-                }
-            } 
-            else
-            {
-                document.getElementById("userChoiceImage").src = "images/Rock.png";
-                computerScore++;
+            computerScore++;
+        }
+    }
+    // Computer chose scissors.
+    else if (playerOne == "scissors")
+    {
+        computerChoiceImage.src = "images/Scissors.png";
 
-                window.alert("You lost!");
-                if (confirm('Would you like to play again?')) {
-                    break;
-                }
-                else {
-                    load();
-                }
-            }
+        if (playerTwo == "rock") 
+        {
+            // User won: Scissors Vs Rock
+            userChoiceImage.src = "images/Rock.png";
 
-            break;
+            userChoiceImage.style.border = "2px solid blue"; 
+            computerChoiceImage.style.border = "none";
 
-        // Computer chose scissors.
-        case "scissors":
-            document.getElementById("computerChoiceImage").src = "images/Scissors.png";
+            userScore++;
+        }
+        else
+        {
+            // User lost: Scissors Vs Paper
+            userChoiceImage.src = "images/Paper.png";
 
-            if (playerTwo == "rock") 
-            {
-                document.getElementById("userChoiceImage").src = "images/Rock.png";
-                userScore++;
+            computerChoiceImage.style.border = "2px solid blue";
+            userChoiceImage.style.border = "none";
 
-                window.alert("You won!");
-                if (confirm('Would you like to play again?')) {
-                    break;
-                }
-                else {
-                    load();
-                }
-            }
-            else
-            {
-                document.getElementById("userChoiceImage").src = "images/Paper.png";
-                computerScore++;
-
-                window.alert("You lost!");
-                if (confirm('Would you like to play again?')) {
-                    break;
-                }
-                else {
-                    load();
-                }
-            }
-
-            break;              
+            computerScore++;
+        }
     }
 }
 
@@ -216,6 +187,10 @@ function load(){
     document.getElementById("computerScore").style.display = "none";
     userScore = 0;
     computerScore = 0;
+
+    // Clearing borders
+    computerChoiceImage.style.border = "none"; 
+    userChoiceImage.style.border = "none";     
 
     // Site buttons.
     document.getElementById("start").style.display = "block";
