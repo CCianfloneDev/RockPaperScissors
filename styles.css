@@ -71,7 +71,6 @@ body {
 
 #userChoiceBox, #computerChoiceBox
 {
-
 	width: 180px;
 	height: 270px;
 	position: relative;
@@ -89,5 +88,20 @@ body {
 
 #userScore, #computerScore
 {
+	display: none;
+}
+
+.gameMessages
+{
+	position: relative;
+
+	top: 400px;
+	bottom: 0;
+	right: 0;
+	margin: 0 auto;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	display: none;
 }
