@@ -95,9 +95,7 @@ body {
 {
 	position: relative;
 
-	top: 400px;
-	bottom: 0;
-	right: 0;
+	top: 50vh;
 	margin: 0 auto;
 
 	text-align: center;
