@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Fredoka&family=Outfit:wght@300&family=Raleway:wght@200&display=swap');
@@ -7,11 +8,16 @@
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="styles.css" />
 
 	<title>RockPaperScissors</title>
 </head>
+
 <body>
+	<h1 class="gameMessages" id="gameMessage-win">You Win!</h1>
+	<h1 class="gameMessages" id="gameMessage-tie">You Tied!</h1>
+	<h1 class="gameMessages" id="gameMessage-lost">You lost!</h1>
 
 	<main>
 		<div id="choicesBox">
@@ -31,25 +37,27 @@
 			</ol>
 		</div>
 		<div>
-			
+
 		</div>
 
 		<div id="gameStartBox">
-			<img id="initialImage"src="images/GamePhoto.png"/>
+			<img id="initialImage" src="images/GamePhoto.png" />
 		</div>
 
 		<div id="choiceOutputBox">
 			<div id="userChoiceBox">
-				<img id="userChoiceImage" src=""/>
+				<img id="userChoiceImage" src="" />
 				<p id="userScore">User Score:</p>
 			</div>
 
 			<div id="computerChoiceBox">
-				<img id="computerChoiceImage" src=""/>
+				<img id="computerChoiceImage" src="" />
 				<p id="computerScore">Computer Score:</p>
 			</div>
 		</div>
-		<script type="text/javascript" src="rockPaperScissors.js"></script>
 	</main>
+
+	<script type="text/javascript" src="rockPaperScissors.js"></script>
 </body>
+
 </html>

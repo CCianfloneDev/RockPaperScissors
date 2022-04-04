@@ -30,11 +30,18 @@ function getWinner(playerOne, playerTwo) {
     let computerChoiceImage = document.getElementById("computerChoiceImage");
     computerChoiceImage.setAttribute('src', 'images/placeHolder.png');
 
+    let winMessage = document.getElementById("gameMessage-win");
+    let tieMessage = document.getElementById("gameMessage-tie");
+    let lostMessage = document.getElementById("gameMessage-lost");
+
     // If computer choice is same as user choice, determine what computer choice was.
     if (playerOne == playerTwo) 
     {
         computerChoiceImage.style.border = "2px solid green"; 
         userChoiceImage.style.border = "2px solid green";     
+        tieMessage.style.display = "block";
+        winMessage.style.display = "none";
+        lostMessage.style.display = "none";
 
         switch (playerOne)
         {
@@ -63,6 +70,9 @@ function getWinner(playerOne, playerTwo) {
         {
             // User won: Rock Vs Paper
             userChoiceImage.src = "images/Paper.png";
+            winMessage.style.display = "block";
+            lostMessage.style.display = "none";
+            tieMessage.style.display = "none";
 
             computerChoiceImage.style.border = "none";   
             userChoiceImage.style.border = "2px solid blue";
@@ -73,6 +83,9 @@ function getWinner(playerOne, playerTwo) {
         {
             // User lost: Rock Vs Scissors
             userChoiceImage.src = "images/Scissors.png";
+            lostMessage.style.display = "block";
+            winMessage.style.display = "none";
+            tieMessage.style.display = "none";
 
             computerChoiceImage.style.border = "2px solid blue";
             userChoiceImage.style.border = "none";
@@ -89,6 +102,9 @@ function getWinner(playerOne, playerTwo) {
         {
             // User won: Paper Vs Scissors
             userChoiceImage.src = "images/Scissors.png";
+            winMessage.style.display = "block";
+            lostMessage.style.display = "none";
+            tieMessage.style.display = "none";
 
             userChoiceImage.style.border = "2px solid blue";  
             computerChoiceImage.style.border = "none";
@@ -99,6 +115,9 @@ function getWinner(playerOne, playerTwo) {
         {
             // User lost: Paper Vs Rock
             userChoiceImage.src = "images/Rock.png";
+            lostMessage.style.display = "block";
+            winMessage.style.display = "none";
+            tieMessage.style.display = "none";
 
             computerChoiceImage.style.border = "2px solid blue";
             userChoiceImage.style.border = "none";
@@ -115,6 +134,9 @@ function getWinner(playerOne, playerTwo) {
         {
             // User won: Scissors Vs Rock
             userChoiceImage.src = "images/Rock.png";
+            winMessage.style.display = "block";
+            lostMessage.style.display = "none";
+            tieMessage.style.display = "none";
 
             userChoiceImage.style.border = "2px solid blue"; 
             computerChoiceImage.style.border = "none";
@@ -125,6 +147,9 @@ function getWinner(playerOne, playerTwo) {
         {
             // User lost: Scissors Vs Paper
             userChoiceImage.src = "images/Paper.png";
+            lostMessage.style.display = "block";
+            winMessage.style.display = "none";
+            tieMessage.style.display = "none";
 
             computerChoiceImage.style.border = "2px solid blue";
             userChoiceImage.style.border = "none";
