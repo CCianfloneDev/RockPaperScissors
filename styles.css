@@ -3,24 +3,27 @@ body {
 	font-family: 'Fredoka', sans-serif;
 }
 
+
 /* placing the center box that holds the buttons */
-#gameStartBox, #choiceOutputBox
-{
+
+#gameStartBox,
+#choiceOutputBox {
 	position: absolute;
 	top: 70px;
-    bottom: 500px;
-    left: 0;
-    right: 0;
-    margin: auto;
+	bottom: 500px;
+	left: 0;
+	right: 0;
+	margin: auto;
 	width: 510px;
 	height: 270px;
-
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
+
 /* Container for buttons */
+
 #choicesBox {
 	border: 3px solid green;
 	border-radius: 5px;
@@ -34,16 +37,13 @@ body {
 	margin: 0 auto;
 }
 
-#start
-{
+#start {
 	position: relative;
 	height: 100px;
 	width: 300px;
 	transition-duration: 0.4s;
-
 	font-family: 'Fredoka', sans-serif;
 	font-size: 2em;
-
 	top: -40px;
 	bottom: 0;
 	left: -47px;
@@ -51,13 +51,12 @@ body {
 	margin: 0 auto;
 }
 
-#start:hover
-{
-	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+#start:hover {
+	box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
-#choicesBox li, #choicesBox ol
-{
+#choicesBox li,
+#choicesBox ol {
 	position: relative;
 	display: inline-block;
 }
@@ -77,8 +76,7 @@ body {
 	position: relative;
 	font-family: 'Fredoka', sans-serif;
 	transition-duration: 0.4s;
-
-	background-color: #4CAF50; /* Green */
+	background-color: #4CAF50;
 	border: 1px solid grey;
 	border-radius: 5px;
 	color: white;
@@ -89,46 +87,56 @@ body {
 }
 
 .gameButtons:hover {
-	background-color: grey; /* Green */
+	background-color: grey;
 	color: white;
-	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 .gameButtons:active {
 	background-color: #3e8e41;
 	box-shadow: 0 5px #666;
 	transform: translateY(4px);
-  }
+}
 
-#userChoiceBox, #computerChoiceBox
-{
+#userChoiceBox,
+#computerChoiceBox {
 	width: 180px;
 	height: 270px;
 	position: relative;
 }
 
-#userChoiceBox
-{
+#userChoiceBox {
 	margin-right: 85px;
 }
 
-#computerChoiceBox
-{
+#computerChoiceBox {
 	margin-left: 85px;
 }
 
-#userScore, #computerScore
-{
+#userScore,
+#computerScore {
 	display: none;
 }
 
-.gameMessages
-{
+.gameMessages {
 	position: relative;
-
 	top: 50vh;
 	margin: 0 auto;
-
 	text-align: center;
 	display: none;
+}
+
+#footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: gray;
+	color: white;
+	text-align: center;
+}
+
+#footer a {
+	text-decoration: none;
+	color: lightgreen;
 }
