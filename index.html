@@ -1,63 +1,55 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-	<style>
-		@import url('https://fonts.googleapis.com/css2?family=Fredoka&family=Outfit:wght@300&family=Raleway:wght@200&display=swap');
-	</style>
-
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="styles.css" />
-
-	<title>RockPaperScissors</title>
-</head>
-
-<body>
-	<h1 class="gameMessages" id="gameMessage-win">You Win!</h1>
-	<h1 class="gameMessages" id="gameMessage-tie">You Tied!</h1>
-	<h1 class="gameMessages" id="gameMessage-lost">You lost!</h1>
-
-	<main>
-		<div id="choicesBox">
-			<ol>
-				<li>
-					<button id="start">Start Game!</button>
-				</li>
-				<li>
-					<button class="gameButtons" id="btnRock">Rock</button>
-				</li>
-				<li>
-					<button class="gameButtons" id="btnPaper">Paper</button>
-				</li>
-				<li>
-					<button class="gameButtons" id="btnScissors">Scissors</button>
-				</li>
-			</ol>
-		</div>
-		<div>
-
-		</div>
-
-		<div id="gameStartBox">
-			<img id="initialImage" src="images/GamePhoto.png" />
-		</div>
-
-		<div id="choiceOutputBox">
-			<div id="userChoiceBox">
-				<img id="userChoiceImage" src="" />
-				<p id="userScore">User Score:</p>
-			</div>
-
-			<div id="computerChoiceBox">
-				<img id="computerChoiceImage" src="" />
-				<p id="computerScore">Computer Score:</p>
-			</div>
-		</div>
-	</main>
-
-	<script type="text/javascript" src="rockPaperScissors.js"></script>
-</body>
-
+   <head>
+      <style>
+         @import url('https://fonts.googleapis.com/css2?family=Fredoka&family=Outfit:wght@300&family=Raleway:wght@200&display=swap');
+      </style>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="styles.css" />
+      <title>RockPaperScissors</title>
+   </head>
+   <body>
+      <h1 class="gameMessages" id="gameMessage-win">You Win!</h1>
+      <h1 class="gameMessages" id="gameMessage-tie">You Tied!</h1>
+      <h1 class="gameMessages" id="gameMessage-lost">You lost!</h1>
+      <main>
+         <div id="choicesBox">
+            <ol>
+               <li>
+                  <button id="start">Start Game!</button>
+               </li>
+               <li>
+                  <button class="gameButtons" id="btnRock">Rock</button>
+               </li>
+               <li>
+                  <button class="gameButtons" id="btnPaper">Paper</button>
+               </li>
+               <li>
+                  <button class="gameButtons" id="btnScissors">Scissors</button>
+               </li>
+            </ol>
+         </div>
+         <div>
+         </div>
+         <div id="gameStartBox">
+            <img id="initialImage" src="images/GamePhoto.png" alt="initalImage"/>
+         </div>
+         <div id="choiceOutputBox">
+            <div id="userChoiceBox">
+               <img id="userChoiceImage" src="placeholder" alt="userChoiceImage"/>
+               <p id="userScore">User Score:</p>
+            </div>
+            <div id="computerChoiceBox">
+               <img id="computerChoiceImage" src="placeholder" alt="computerChoiceImage"/>
+               <p id="computerScore">Computer Score:</p>
+            </div>
+         </div>
+      </main>
+      <script type="text/javascript" src="rockPaperScissors.js"></script>
+      <div id="footer">
+         <p>Cole Cianflone 2022 || <a href="https://github.com/CCianfloneDev">GitHub</a> || <a href="https://www.linkedin.com/in/colecianflone/">LinkedIn</a></p>
+      </div>
+   </body>
 </html>
